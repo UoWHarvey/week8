@@ -29,12 +29,13 @@ function successPosition(position) {
 	
 
 	//lets get some stuff out of the position object
-	var time = position.timestamp;
+	var time = new Date(position.timestamp);
+    var date = time.getHours() +":" + time.getMinutes();
 	var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 	
 	//OK. Now we want to update the display with the correct values
-	$('#time').val("Recieved data at " + time);
+	$('#time').val("Recieved data at " + date);
 	$('#lattext').val(latitude);
     $('#longtext').val(longitude);
 	
